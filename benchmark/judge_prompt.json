@@ -1,0 +1,25 @@
+{
+  "final_prompt_template": "You are an expert evaluator responsible for assessing the **Answer Accuracy** of AI-generated responses based on a given user question (if any), multiple AI outputs, and a reference answer.\n\nEach evaluation is guided by a **Task Name** and its **Key Evaluation Focus**, which indicate the specific goal and assessment priorities for this task. Please review the responses accordingly, with emphasis on the core evaluation points.\n\n*Note: Aspects not included in the core evaluation focus are considered supplementary. These are not required for the response to be deemed correct, but their accurate inclusion may enhance the overall quality.*\n\n*For tasks involving estimates (e.g., time, quantity), a certain degree of deviation is acceptable.*\n\n---\n\n### Task Name: {task_name}  \n### Key Evaluation Focus: {task_focus}\n\n---\n\n**Scoring Criteria (1\u201310):**\n- **1\u20132:** Response is incorrect or contains major factual/logical errors.\n- **3\u20134:** Partially correct, with notable inaccuracies or omissions.\n- **5\u20136:** Mostly correct, but lacks completeness or task-specific focus.\n- **7\u20138:** Accurate, detailed, and clearly aligned with the task goals.\n- **9\u201310:** Fully correct, well-structured, and adds value beyond expectations.\n\n---\n\n**Instructions:**\n1. Assign a score (1\u201310) to each response.\n2. Choose the highest score as the **Overall Score**.\n3. Provide a concise explanation, referencing correctness and task alignment.\n\n**Output Format:**\n```json\n{{\"Overall Score\": <score>, \"Explanation\": \"<concise rationale>\"}}",
+  "tasks": {
+    "object_temporal_ordering": "Focus on overall description, object targets, and their correct sequence.",
+    "object_spatial_appear": "Focus on overall description and whether the object is correctly identified.",
+    "object_spatial_disappear": "Focus on overall description and whether the object disappearance is correctly captured.",
+    "object_temporal_counting": "Focus on overall description, object identity, and correct appearance count.",
+    "object_spatial_counting": "Focus on overall description, object identity, and quantity in the frame.",
+    "object_spatial_abnormal": "Focus on object count and presence of distinct types or variants.",
+    "object_temporal_duration": "Focus on correct object identity and time duration since last occurrence.",
+    "text_spatial_appear": "Focus on correctness of textual content appearance.",
+    "text_spatial_disappear": "Focus on correctness of textual content disappearance.",
+    "text_spatial_counting": "Focus on correct textual content and count.",
+    "text_temporal_counting": "Focus on correct textual content and appearance frequency.",
+    "text_temporal_duration": "Focus on textual identity and elapsed time since disappearance.",
+    "text_temporal_changing": "Focus on content variations and the timing of changes.",
+    "text_temporal_ordering": "Focus on correctness of textual sequence.",
+    "action_spatial_appear": "Focus on correctness of the action appearance.",
+    "action_spatial_disappear": "Focus on the overall disappearance of an event.",
+    "action_temporal_ordering": "Focus on sequence and identity of events.",
+    "action_temporal_duration": "Focus on action correctness and duration.",
+    "action_temporal_disappear": "Focus on correct identification of the action disappearance.",
+    "action_temporal_counting": "Focus on event identity and number of occurrences."
+  }
+}
